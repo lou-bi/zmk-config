@@ -64,10 +64,10 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
       compatible = "zmk,keymap";
          default {
             bindings = <
-___ &kp A       &kp Z       &kp E        &kp R        &kp T    /**/ &kp Y   &kp U        &kp I        &kp O       &kp P       &mo ACCENT  
+___ &kp A       &kp Z       &kp E        &kp R        &kp T    /**/ &kp Y   &kp U        &kp I        &kp O       &kp P       ___  
 ___ &hml LGUI Q &hml LALT S &hml LCTRL D &hml LSHFT F &kp G    /**/ &kp H   &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI M &kp C_VOL_UP
 ___ &kp W       &kp X       &kp C        &kp V        &kp B    /**/ &kp N   &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH    &kp C_VOL_DN  
-                                  &kp BSPC     &mo SYMBOL   &kp SPACE/**/ &kp RET &mo ACCENT   &kp DEL 
+                            &kp BSPC     &mo SYM      &kp SPACE/**/ &kp RET &mo ACC      &kp DEL 
             >;
          };
          symbols {
