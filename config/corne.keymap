@@ -85,7 +85,7 @@ ___ &fr_a_circumflex &fr_a_grave     &fr_e_grave     &fr_e_acute   &fr_e_circumf
 ___ &fr_o_circumflex &fr_i_diaeresis &fr_e_diaeresis &fr_c_cedilla ___              /**/ ___ ___ ___ ___ ___ ___
                                                                         ___ ___ ___ /**/ ___ ___ ___
             >
-         }
+         };
    };
 };
 
