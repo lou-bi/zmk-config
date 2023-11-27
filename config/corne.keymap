@@ -71,7 +71,7 @@ ___ &kp W       &kp X       &kp C        &kp V        &kp B    /**/ &kp N   &kp 
             >;
          };
          symbols {
-            bindings<
+            bindings = <
 ___ &kp N1   &kp N2    &kp N3   &kp N4     &kp N5   /**/ &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   ___ 
 ___ &kp LBKT &kp RBKT  &kp LPAR &kp RPAR   &kp EXCL /**/ &kp SQT   &kp MINUS &kp LBRC  &kp RBRC &kp BSLH ___
 ___ &kp PLUS &kp MINUS &kp STAR &kp PRCNT  &kp DLLR /**/ &kp GRAVE &kp AMPS  &kp CARET &kp HASH &kp AT   ___ 
@@ -79,7 +79,7 @@ ___ &kp PLUS &kp MINUS &kp STAR &kp PRCNT  &kp DLLR /**/ &kp GRAVE &kp AMPS  &kp
  >;
          };
          accents {
-            bindings<
+            bindings = <
 ___ ___              ___             &fr_ae          &fr_oe        ___              /**/ ___ ___ ___ ___ ___ ___
 ___ &fr_a_circumflex &fr_a_grave     &fr_e_grave     &fr_e_acute   &fr_e_circumflex /**/ ___ ___ ___ ___ ___ ___
 ___ &fr_o_circumflex &fr_i_diaeresis &fr_e_diaeresis &fr_c_cedilla ___              /**/ ___ ___ ___ ___ ___ ___
