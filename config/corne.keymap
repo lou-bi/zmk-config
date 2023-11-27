@@ -15,7 +15,7 @@
 /* layer and key shortcuts */
 
 #define ___ &trans
-
+#define dummy false
 
 
 /* custom behaviors */
