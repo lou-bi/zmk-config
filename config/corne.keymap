@@ -16,22 +16,21 @@
 /* layer and key shortcuts */
 
 #define ___ &trans
+#define XXX &none
+
 #define uea &fr_ae          
-#define uoe &fr_oe          
-#define uacirc &fr_a_circumflex 
+#define uoe &fr_oe  
 #define uagrav &fr_a_grave     
 #define uegrav &fr_e_grave     
 #define uecute &fr_e_acute   
+#define uacirc &fr_a_circumflex 
 #define uecirc &fr_e_circumflex 
 #define uocirc &fr_o_circumflex 
+#define ucced &fr_c_cedilla
 #define uidia &fr_i_diaeresis 
 #define uedia &fr_e_diaeresis 
-#define ucced &fr_c_cedilla
+ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 
-
-/* custom behaviors */
-
-/* Global settings */
 
 #define QUICK_TAP_MS 175
 
@@ -54,17 +53,8 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
-// windows sleep macro
-ZMK_BEHAVIOR(win_sleep, macro,
-    wait-ms = <100>;
-    tap-ms = <5>;
-    bindings = <&kp LG(X) &kp U &kp S>;
-)
-
-// euro sign
-ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
-
-#define DEF 0  // layer shortcuts, must match order in which they are defined below
+// layer shortcuts, must match order in which they are defined below
+#define DEF 0
 #define SYM 1
 #define ACC 2
 #define FUN 3
@@ -73,14 +63,16 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
 / {
    keymap {
       compatible = "zmk,keymap";
+/*************************************************************************************************************************************************************/         
          default {
             bindings = <
-___ &kp A       &kp Z       &kp E        &kp R        &kp T    /**/ &kp Y   &kp U        &kp I        &kp O       &kp P       ___  
-___ &hml LGUI Q &hml LALT S &hml LCTRL D &hml LSHFT F &kp G    /**/ &kp H   &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI M &kp C_VOL_UP
-___ &kp W       &kp X       &kp C        &kp V        &kp B    /**/ &kp N   &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH    &kp C_VOL_DN  
-                            &kp BSPC     &mo SYM      &kp SPACE/**/ &kp RET &mo ACC      &kp DEL 
+&C_PP &kp A       &kp Z       &kp E        &kp R        &kp T    /**/ &kp Y   &kp U        &kp I        &kp O       &kp P       &kp C_VOL_UP  
+&ESC  &hml LGUI Q &hml LALT S &hml LSHFT D &hml LCTRL F &kp G    /**/ &kp H   &hmr RCTRL J &hmr RSHFT K &hmr RALT L &hmr RGUI M &kp C_VOL_DOWN
+&BSPC &kp W       &kp X       &kp C        &kp V        &kp B    /**/ &kp N   &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH    &kp DEL  
+                              &kp BSPC     &mo SYM      &kp SPACE/**/ &kp RET &mo ACC      &kp DEL 
             >;
          };
+/*************************************************************************************************************************************************************/         
          symbols {
             bindings = <
 ___ &kp N1   &kp N2    &kp N3   &kp N4     &kp N5   /**/ &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   ___ 
@@ -89,6 +81,7 @@ ___ &kp PLUS &kp MINUS &kp STAR &kp PRCNT  &kp DLLR /**/ &kp GRAVE &kp AMPS  &kp
                        ___      ___        ___      /**/ ___       ___        ___
             >;
          };
+/*************************************************************************************************************************************************************/         
          accents {
             bindings = <
 ___ ___              ___             &fr_ae          &fr_oe        ___              /**/ ___ ___ ___ ___ ___ ___
@@ -97,7 +90,26 @@ ___ &fr_o_circumflex &fr_i_diaeresis &fr_e_diaeresis &fr_c_cedilla ___          
                                                                         ___ ___ ___ /**/ ___ ___ ___
             >;
          };
+/*************************************************************************************************************************************************************/
+         nav_layer {
+            bindings = <
+&swap2    &trans     &trans     &trans       &trans       &trans                    &trans     &trans      &kp HOME    &kp END    &trans     &none
+&swap     &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT  &trans     &kp F11
+&kp STAB  &kp LC(Z)  &kp LC(X)  &kp LC(C)    &kp LC(V)    &kp PSCRN                 &trans     &trans      &trans      &trans     &trans     &none 
+                                 &trans       &trans       &trans                    &trans     &trans      &trans  
+            >;
+         };
+/*************************************************************************************************************************************************************/         
+         extra_layer {
+            bindings = <
+&none     &kp LC(N1) &kp LC(N2) &kp LC(N3)   &kp LC(N4)   &kp LC(N5)                &kp LC(N6) &kp LC(N7)  &kp LC(N8)  &kp LC(N9) &kp LC(N0) &none
+&none     &kp LA(N1) &kp LA(N2) &kp LA(N3)   &kp LA(N4)   &kp LA(N5)                &kp LA(N6) &kp LA(N7)  &kp LA(N8)  &kp LA(N9) &kp LA(N0) &none
+&none     &none      &none      &none        &none        &none                     &none      &none       &none       &none      &none      &none 
+                                &trans       &trans       &trans                    &trans     &trans      &trans
+            >;
    };
+/*************************************************************************************************************************************************************/         
+/*************************************************************************************************************************************************************/         
 };
 
 /* COLEMAK DH
