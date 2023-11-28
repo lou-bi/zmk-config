@@ -18,6 +18,10 @@
 #define ___ &trans
 #define XXX &none
 
+#define STAB (LS(TAB))
+#define CTAB (LC(TAB))
+#define CSTAB (LC(LS(TAB)))
+
 #define uea &fr_ae          
 #define uoe &fr_oe  
 #define uagrav &fr_a_grave     
