@@ -57,8 +57,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 #define DEF 0
 #define SYM 1
 #define ACC 2
-#define FUN 3
-#define NAV 4
+#define NAV 3
+#define FUN 4
 
 / {
    keymap {
