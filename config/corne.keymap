@@ -66,10 +66,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 /*************************************************************************************************************************************************************/         
          default {
             bindings = <
-&C_PP &kp A       &kp Z       &kp E        &kp R        &kp T    /**/ &kp Y   &kp U        &kp I        &kp O       &kp P       &kp C_VOL_UP  
-&ESC  &hml LGUI Q &hml LALT S &hml LSHFT D &hml LCTRL F &kp G    /**/ &kp H   &hmr RCTRL J &hmr RSHFT K &hmr RALT L &hmr RGUI M &kp C_VOL_DOWN
-&BSPC &kp W       &kp X       &kp C        &kp V        &kp B    /**/ &kp N   &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH    &kp DEL  
-                              &kp BSPC     &mo SYM      &kp SPACE/**/ &kp RET &mo ACC      &kp DEL 
+&kp C_PP &kp A       &kp Z       &kp E        &kp R        &kp T    /**/ &kp Y   &kp U        &kp I        &kp O       &kp P       &kp C_VOL_UP  
+&kp ESC  &hml LGUI Q &hml LALT S &hml LSHFT D &hml LCTRL F &kp G    /**/ &kp H   &hmr RCTRL J &hmr RSHFT K &hmr RALT L &hmr RGUI M &kp C_VOL_DOWN
+&kp BSPC &kp W       &kp X       &kp C        &kp V        &kp B    /**/ &kp N   &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH    &kp DEL  
+                                 &kp BSPC     &mo SYM      &kp SPACE/**/ &kp RET &mo ACC      &kp DEL 
             >;
          };
 /*************************************************************************************************************************************************************/         
