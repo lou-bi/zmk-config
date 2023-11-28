@@ -16,6 +16,18 @@
 /* layer and key shortcuts */
 
 #define ___ &trans
+#define uea &fr_ae          
+#define uoe &fr_oe          
+#define uacirc &fr_a_circumflex 
+#define uagrav &fr_a_grave     
+#define uegrav &fr_e_grave     
+#define uecute &fr_e_acute   
+#define uecirc &fr_e_circumflex 
+#define uocirc &fr_o_circumflex 
+#define uidia &fr_i_diaeresis 
+#define uedia &fr_e_diaeresis 
+#define ucced &fr_c_cedilla
+
 
 /* custom behaviors */
 
