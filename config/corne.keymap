@@ -93,8 +93,8 @@ ___ &fr_o_circumflex &fr_i_diaeresis &fr_e_diaeresis &fr_c_cedilla ___          
 /*************************************************************************************************************************************************************/
          nav_layer {
             bindings = <
-&swap2    &trans     &trans     &trans       &trans       &trans                    &trans     &trans      &kp HOME    &kp END    &trans     &none
-&swap     &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT  &trans     &kp F11
+&trans    &trans     &trans     &trans       &trans       &trans                    &trans     &trans      &kp HOME    &kp END    &trans     &none
+&trans    &sk LGUI   &sk LALT   &sk LSHFT    &sk LCTRL    &sk RALT                  &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT  &trans     &kp F11
 &kp STAB  &kp LC(Z)  &kp LC(X)  &kp LC(C)    &kp LC(V)    &kp PSCRN                 &trans     &trans      &trans      &trans     &trans     &none 
                                  &trans       &trans       &trans                    &trans     &trans      &trans  
             >;
@@ -107,7 +107,7 @@ ___ &fr_o_circumflex &fr_i_diaeresis &fr_e_diaeresis &fr_c_cedilla ___          
 &none     &none      &none      &none        &none        &none                     &none      &none       &none       &none      &none      &none 
                                 &trans       &trans       &trans                    &trans     &trans      &trans
             >;
-   };
+         };
 /*************************************************************************************************************************************************************/         
 /*************************************************************************************************************************************************************/         
 };
