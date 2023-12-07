@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+* Copyright (c) 2020 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
 
 #include <behaviors.dtsi>
 #include "../zmk-nodefree-config/helper.h"
@@ -24,7 +24,21 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                                  // thumbs
-
+#define KEYS_AE  LM1 RM2
+#define KEYS_OE  RM2 RM4
+#define KEYS_A_G LM1 LM2
+#define KEYS_A_C LM1 LM2 LM3
+#define KEYS_C_C LB2 LB3 LB4
+#define KEYS_E_G RM2 RM3
+#define KEYS_E_A RM2 RM1
+#define KEYS_E_C RM1 RM2 RM3
+#define KEYS_E_D RM1 RM2 RM3 RM4
+#define KEYS_I_C RM3 RT2
+#define KEYS_I_D RM3 RB2
+#define KEYS_O_C RM4 RT2
+#define KEYS_U_G RT2 RT3
+#define KEYS_U_C RT1 RT2 RT3
+#define KEYS_U_D RT2 RM1
 
 // layer shortcuts, must match order in which they are defined below
 
@@ -60,16 +74,101 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
+
+        shiftlock: shift_lock {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_LOCK";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&sk LSHFT>;
+        };
     };
 
+    combos {
+        compatible = "zmk,combos";
 
-   conditional_layers {
-      compatible = "zmk,conditional-layers";
+        ae {
+            bindings = <&ae>;
+            key-positions = <KEYS_AE>;
+        };
 
-      sym_num_to_med {
-         if-layers = <SYM NUM>;
-         then-layer = <MED>;
-      };
+        oe {
+            bindings = <&oe>;
+            key-positions = <KEYS_OE>;
+        };
+
+        a_g {
+            bindings = <&a_g>;
+            key-positions = <KEYS_A_G>;
+        };
+
+        a_c {
+            bindings = <&a_c>;
+            key-positions = <KEYS_A_C>;
+        };
+
+        c_c {
+            bindings = <&c_c>;
+            key-positions = <KEYS_C_C>;
+        };
+
+        e_g {
+            bindings = <&e_g>;
+            key-positions = <KEYS_E_G>;
+        };
+
+        e_a {
+            bindings = <&e_a>;
+            key-positions = <KEYS_E_A>;
+        };
+
+        e_c {
+            bindings = <&e_c>;
+            key-positions = <KEYS_E_C>;
+        };
+
+        e_d {
+            bindings = <&e_d>;
+            key-positions = <KEYS_E_D>;
+        };
+
+        i_c {
+            bindings = <&i_c>;
+            key-positions = <KEYS_I_C>;
+        };
+
+        i_d {
+            bindings = <&i_d>;
+            key-positions = <KEYS_I_D>;
+        };
+
+        o_c {
+            bindings = <&o_c>;
+            key-positions = <KEYS_O_C>;
+        };
+
+        u_g {
+            bindings = <&u_g>;
+            key-positions = <KEYS_U_G>;
+        };
+
+        u_c {
+            bindings = <&u_c>;
+            key-positions = <KEYS_U_C>;
+        };
+
+        u_d {
+            bindings = <&u_d>;
+            key-positions = <KEYS_U_D>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        sym_num_to_med {
+            if-layers = <SYM NUM>;
+            then-layer = <MED>;
+        };
     };
 
     keymap {
@@ -77,18 +176,18 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 
         default {
             bindings = <
-&kp C_PP  &kp Q        &kp W        &kp F           &kp P         &kp B        &kp J    &kp L         &kp U          &kp Y        &kp SEMI        &kp C_VOL_UP
-&kp TAB   &hml LGUI A  &hml LALT R  &hml LSHFT S    &hml LCTRL T  &kp G        &kp M    &hmr RCTRL N  &hmr RSHFT E   &hmr RALT I  &hmr RGUI O  &kp C_VOL_DN
-&kp BSPC  &kp Z        &kp X        &kp C           &kp D         &kp V        &kp K    &kp H      &kp COMMA      &kp DOT      &kp FSLH     &kp DEL
-                                    &lt 4 LC(BSPC)  &lt 1 ESC     &kp SPACE    &kp RET  &lt 2 LSHFT   &lt 3 LC(DEL)
+&kp C_PP  &kp Q        &kp W        &kp F           &kp P         &kp B          &kp J      &kp L         &kp U          &kp Y        &kp SEMI     &kp C_VOL_UP
+&kp TAB   &hml LGUI A  &hml LALT R  &hml LSHFT S    &hml LCTRL T  &kp G          &kp M      &hmr RCTRL N  &hmr RSHFT E   &hmr RALT I  &hmr RGUI O  &kp C_VOL_DN
+&kp BSPC  &kp Z        &kp X        &kp C           &kp D         &kp V          &kp K      &kp H         &kp COMMA      &kp DOT      &kp FSLH     &kp DEL
+                                    &lt 4 LC(BSPC)  &kp ESC       &lt 1 SPACE    &lt 2 RET  &shiftlock    &lt 3 LC(DEL)
             >;
         };
 
         symbol_layer {
             bindings = <
-&trans  &kp EXCL  &kp AT     &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp QMARK  &kp APOS  &trans
-&euro   &kp PLUS  &kp EQUAL  &kp LPAR   &kp RPAR  &kp DQT      &kp COLON  &kp LBKT   &kp RBKT  &kp LBRC   &kp RBRC  &trans
-&trans  &kp LT    &kp PIPE   &kp MINUS  &kp GT    &kp BSLH     &kp GRAVE  &kp UNDER  &kp FSLH  &kp TILDE  &kp SEMI  &trans
+&trans  &kp EXCL  &kp AT     &kp HASH   &kp DLLR  &kp PRCNT    &kp GRAVE  &kp AMPS   &kp STAR  &kp QMARK  &kp CARET  &trans
+&euro   &kp PLUS  &kp EQUAL  &kp LPAR   &kp RPAR  &kp DQT      &kp COLON  &kp LBKT   &kp RBKT  &kp LBRC   &kp RBRC   &trans
+&trans  &kp LT    &kp PIPE   &kp MINUS  &kp GT    &kp BSLH     &kp APOS   &kp UNDER  &kp FSLH  &kp TILDE  &kp SEMI   &trans
                              &trans     &trans    &trans       &trans     &trans     &trans
             >;
         };
@@ -104,9 +203,9 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 
         accent_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &oe  &ae  &trans  &trans  &trans  &trans
-&trans  &a_c    &a_g    &e_g    &e_a    &trans    &e_c  &e_d  &trans  &trans  &trans  &trans
-&trans  &o_c    &i_d    &e_d    &c_c    &trans    &i_d  &o_c  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &oe     &ae     &trans  &trans  &trans  &trans
+&trans  &a_c    &a_g    &e_g    &e_a    &trans    &e_c    &e_d    &trans  &trans  &trans  &trans
+&trans  &o_c    &i_d    &e_d    &c_c    &trans    &i_d    &o_c    &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
