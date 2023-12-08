@@ -5,7 +5,6 @@
 */
 
 #include <behaviors.dtsi>
-#include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"                // keyposition helpers
 #include "../zmk-nodefree-config/international_chars/french.dtsi"
 #include <dt-bindings/zmk/mouse.h>
