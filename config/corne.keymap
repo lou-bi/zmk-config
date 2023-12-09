@@ -24,11 +24,11 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                                  // thumbs
-#define KEYS_AE  LM1 RM2
+#define KEYS_AE  LM4 RM2
 #define KEYS_OE  RM2 RM4
-#define KEYS_A_G LM1 LM2
-#define KEYS_A_C LM1 LM2 LM3
-#define KEYS_C_C LB2 LB3 LB4
+#define KEYS_A_G LM4 LM3
+#define KEYS_A_C LM4 LM3 LM2
+#define KEYS_C_C LB2 LB3 LB1
 #define KEYS_E_G RM2 RM3
 #define KEYS_E_A RM2 RM1
 #define KEYS_E_C RM1 RM2 RM3
