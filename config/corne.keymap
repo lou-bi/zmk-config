@@ -45,9 +45,8 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 #define DEF 0
 #define SYM 1
 #define NUM 2
-#define ACC 3
-#define NAV 4
-#define MED 5
+#define NAV 3
+#define MED 4
 
 / {
     behaviors {
@@ -79,7 +78,7 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFT_LOCK";
             #binding-cells = <0>;
-            bindings = <&kp LSHFT>, <&sk LSHFT>;
+            bindings = <&kp LSHFT>, <&kp CAPS>;
         };
     };
 
@@ -198,15 +197,6 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 &trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp PLUS  &trans
 &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F12    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT   &trans
                         &trans  &trans  &trans     &trans     &trans  &trans
-            >;
-        };
-
-        accent_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &oe     &ae     &trans  &trans  &trans  &trans
-&trans  &a_c    &a_g    &e_g    &e_a    &trans    &e_c    &e_d    &trans  &trans  &trans  &trans
-&trans  &o_c    &i_d    &e_d    &c_c    &trans    &i_d    &o_c    &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
