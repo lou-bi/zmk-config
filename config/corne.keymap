@@ -202,7 +202,7 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
         };
         media_layer {
             bindings = <
-&none  &none         &kp C_VOL_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none         &none         &none         &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
+&none  &none         &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none         &none         &none         &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
 &none  &none         &kp C_PREV     &kp C_AC_BACK &kp C_AC_FORWARD &kp C_NEXT    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none 
 &none  &kp C_BRI_MIN &kp C_BRI_DN   &kp C_BRI_UP  &kp C_BRI_MAX    &none         &none         &none         &none         &none         &none         &none 
                                     &none         &none            &kp C_PP      &none         &none         &none 
