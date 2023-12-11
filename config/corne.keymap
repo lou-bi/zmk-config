@@ -161,14 +161,14 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
+    // conditional_layers {
+    //     compatible = "zmk,conditional-layers";
 
-        sym_num_to_med {
-            if-layers = <SYM NUM>;
-            then-layer = <MED>;
-        };
-    };
+    //     sym_num_to_med {
+    //         if-layers = <SYM NUM>;
+    //         then-layer = <MED>;
+    //     };
+    // };
 
     keymap {
         compatible = "zmk,keymap";
@@ -176,9 +176,9 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
         default {
             bindings = <
 &kp C_PP  &kp Q        &kp W        &kp F           &kp P         &kp B          &kp J      &kp L         &kp U          &kp Y        &kp APOS     &kp C_VOL_UP
-&kp TAB   &hml LGUI A  &hml LALT R  &hml LSHFT S    &hml LCTRL T  &kp G          &kp M      &hmr RCTRL N  &hmr RSHFT E   &hmr RALT I  &hmr RGUI O  &kp C_VOL_DN
+&kp TAB   &hml LGUI A  &hml LALT R  &hml LSHFT S    &hml LCTRL T  &kp G          &kp M      &hmr LCTRL N  &hmr LSHFT E   &hmr LALT I  &hmr LGUI O  &kp C_VOL_DN
 &kp BSPC  &kp Z        &kp X        &kp C           &kp D         &kp V          &kp K      &kp H         &kp COMMA      &kp DOT      &kp MINUS    &kp DEL
-                                    &lt 4 LC(BSPC)  &kp ESC       &lt 1 SPACE    &lt 2 RET  &shiftlock    &lt 3 LC(DEL)
+                                    &lt 3 LC(BSPC)  &shiftlock    &lt 1 SPACE    &lt 2 RET  &kp ESC       &lt 4 LC(DEL)
             >;
         };
 
@@ -193,28 +193,28 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 
         numeric_layer {
             bindings = <
-&trans  &trans  &kp F7  &kp F8  &kp F9  &kp F10    &kp FSLH   &kp N7  &kp N8  &kp N9  &kp STAR  &trans
-&trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp PLUS  &trans
-&trans  &trans  &kp F1  &kp F2  &kp F3  &kp F12    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT   &trans
-                        &trans  &trans  &trans     &trans     &trans  &trans
+&none   &none   &kp F7  &kp F8  &kp F9  &kp F10    &kp FSLH   &kp N7  &kp N8  &kp N9  &kp STAR  &none 
+&none   &none   &kp F4  &kp F5  &kp F6  &kp F11    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp PLUS  &none 
+&none   &none   &kp F1  &kp F2  &kp F3  &kp F12    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT   &none 
+                        &none   &none   &none      &none      &none   &none 
             >;
         };
 
         navigation_layer {
             bindings = <
-&trans  &trans     &trans     &trans     &trans     &trans     &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &none
-&trans  &kp LGUI   &kp LALT   &kp LSHFT  &kp LCTRL  &kp TAB    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans     &trans  &trans    &kp END    &kp HOME   &trans     &none
-                              &trans     &trans     &trans     &trans  &trans    &trans
+&none   &none      &none      &none      &none      &none      &none   &none     &kp PG_DN  &kp PG_UP  &none      &none
+&none   &kp LGUI   &kp LALT   &kp LSHFT  &kp LCTRL  &kp TAB    &none   &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none 
+&none   &kp LC(Z)  &kp LC(X)  &kp LC(C)  &none      &kp LC(V)  &none   &none     &kp END    &kp HOME   &none      &none
+                              &none      &none      &none      &none   &none     &none 
             >;
         };
 
         media_layer {
             bindings = <
-&kp C_VOL_UP  &trans  &trans      &trans         &trans            &trans        &trans        &trans        &trans        &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
-&kp C_VOL_DN  &trans  &kp C_PREV  &kp C_AC_BACK  &kp C_AC_FORWARD  &kp C_NEXT    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
-&kp C_MUTE    &trans  &trans      &trans         &trans            &trans        &trans        &trans        &trans        &trans        &trans        &trans
-                                  &trans         &trans            &kp C_PP      &trans        &trans        &trans
+&kp C_VOL_UP  &none   &none       &none          &none             &none         &none         &none         &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
+&kp C_VOL_DN  &none   &kp C_PREV  &kp C_AC_BACK  &kp C_AC_FORWARD  &kp C_NEXT    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none 
+&kp C_MUTE    &none   &none       &none          &none             &none         &none         &none         &none         &none         &none         &none 
+                                  &none          &none             &kp C_PP      &none         &none         &none 
             >;
         };
     };
