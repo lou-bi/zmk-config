@@ -18,27 +18,13 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                                  // thumbs
-#define KEYS_AE  LM4 RM2
-#define KEYS_OE  RM2 RM4
-#define KEYS_A_G LM4 LM3
-#define KEYS_A_C LM4 LM3 LM2
-#define KEYS_C_C LB2 LB3 LB1
-#define KEYS_E_G RM2 RM3
-#define KEYS_E_A RM2 RM1
-#define KEYS_E_C RM1 RM2 RM3
-#define KEYS_E_D RM1 RM2 RM3 RM4
-#define KEYS_I_C RM3 RT2
-#define KEYS_I_D RM3 RB2
-#define KEYS_O_C RM4 RT2
-#define KEYS_U_G RT2 RT3
-#define KEYS_U_C RT1 RT2 RT3
-#define KEYS_U_D RT2 RM1
 
 #define DEF 0
 #define SYM 1
 #define NUM 2
 #define NAV 3
 #define MED 4
+#define CAN 5
 
 / {
     behaviors {
@@ -74,93 +60,15 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
 
-        ae {
-            bindings = <&ae>;
-            key-positions = <KEYS_AE>;
-        };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
 
-        oe {
-            bindings = <&oe>;
-            key-positions = <KEYS_OE>;
-        };
-
-        a_g {
-            bindings = <&a_g>;
-            key-positions = <KEYS_A_G>;
-        };
-
-        a_c {
-            bindings = <&a_c>;
-            key-positions = <KEYS_A_C>;
-        };
-
-        c_c {
-            bindings = <&c_c>;
-            key-positions = <KEYS_C_C>;
-        };
-
-        e_g {
-            bindings = <&e_g>;
-            key-positions = <KEYS_E_G>;
-        };
-
-        e_a {
-            bindings = <&e_a>;
-            key-positions = <KEYS_E_A>;
-        };
-
-        e_c {
-            bindings = <&e_c>;
-            key-positions = <KEYS_E_C>;
-        };
-
-        e_d {
-            bindings = <&e_d>;
-            key-positions = <KEYS_E_D>;
-        };
-
-        i_c {
-            bindings = <&i_c>;
-            key-positions = <KEYS_I_C>;
-        };
-
-        i_d {
-            bindings = <&i_d>;
-            key-positions = <KEYS_I_D>;
-        };
-
-        o_c {
-            bindings = <&o_c>;
-            key-positions = <KEYS_O_C>;
-        };
-
-        u_g {
-            bindings = <&u_g>;
-            key-positions = <KEYS_U_G>;
-        };
-
-        u_c {
-            bindings = <&u_c>;
-            key-positions = <KEYS_U_C>;
-        };
-
-        u_d {
-            bindings = <&u_d>;
-            key-positions = <KEYS_U_D>;
+        sym_num_to_med {
+            if-layers = <SYM NUM>;
+            then-layer = <CAN>;
         };
     };
-
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-
-    //     sym_num_to_med {
-    //         if-layers = <SYM NUM>;
-    //         then-layer = <MED>;
-    //     };
-    // };
 
     keymap {
         compatible = "zmk,keymap";
@@ -202,11 +110,27 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
         };
         media_layer {
             bindings = <
-&none  &none         &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none         &none         &none         &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
+&none  &none         &kp C_MUTE     &kp C_VOL_DN  &kp C_VOL_UP     &none         &none         &none         &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
 &none  &none         &kp C_PREV     &kp C_AC_BACK &kp C_AC_FORWARD &kp C_NEXT    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none 
 &none  &kp C_BRI_MIN &kp C_BRI_DN   &kp C_BRI_UP  &kp C_BRI_MAX    &none         &none         &none         &none         &none         &none         &none 
                                     &none         &none            &kp C_PP      &none         &none         &none 
             >;
         };
-    };
+        canary_layer {
+            bindings = <
+&kp C_PP  &kp W        &kp L        &kp Y           &kp P         &kp B          &kp Z      &kp F         &kp O          &kp U        &kp APOS     &kp C_VOL_UP
+&kp TAB   &hml LGUI C  &hml LALT R  &hml LSHFT S    &hml LCTRL T  &kp G          &kp M      &hmr LCTRL N  &hmr LSHFT E   &hmr LALT I  &hmr LGUI A  &kp C_VOL_DN
+&kp BSPC  &kp Q        &kp J        &kp V           &kp D         &kp K          &kp X      &kp H         &kp COMMA      &kp DOT      &kp MINUS    &kp DEL
+                                    &kp LC(BSPC)    &shiftlock    &kp SPACE      &kp RET    &kp ESC       &kp LC(DEL)
+            >;
+        };
+/*        oxey_layout {
+            bindings = <
+' l c p f  q , o é à
+r n s t d  h u e a i
+x j g v b  . m - * y
+            >;
+        };
+*/
+    };  
 };
