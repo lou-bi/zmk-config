@@ -76,6 +76,7 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
             #binding-cells = <0>;
             bindings
                 = <&macro_wait_time 5>
+                , <&macro_tap &none>
                 , <&macro_tap &kp APOS>
                 ;
         };
