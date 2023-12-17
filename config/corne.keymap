@@ -61,21 +61,21 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
     };
 
 
-/*    conditional_layers {
-        compatible = "zmk,conditional-layers";
+    // conditional_layers {
+    //     compatible = "zmk,conditional-layers";
 
-        sym_num_to_med {
-            if-layers = <SYM NUM>;
-            then-layer = <CAN>;
-        };
-    };
-*/
+    //     sym_num_to_med {
+    //         if-layers = <SYM NUM>;
+    //         then-layer = <CAN>;
+    //     };
+    // };
+
     keymap {
         compatible = "zmk,keymap";
 
         default {
             bindings = <
-&kp C_PP  &kp E        &kp E        &kp E           &kp E         &kp E          &kp E      &kp E         &kp E          &kp E        &kp APOS     &kp C_VOL_UP
+&kp C_PP  &kp Q        &kp W        &kp F           &kp P         &kp B          &kp J      &kp L         &kp U          &kp Y        &kp APOS     &kp C_VOL_UP
 &kp TAB   &hml LGUI A  &hml LALT R  &hml LSHFT S    &hml LCTRL T  &kp G          &kp M      &hmr LCTRL N  &hmr LSHFT E   &hmr LALT I  &hmr LGUI O  &kp C_VOL_DN
 &kp BSPC  &kp Z        &kp X        &kp C           &kp D         &kp V          &kp K      &kp H         &kp COMMA      &kp DOT      &kp MINUS    &kp DEL
                                     &lt 3 LC(BSPC)  &shiftlock    &lt 1 SPACE    &lt 2 RET  &kp ESC       &lt 4 LC(DEL)
