@@ -60,16 +60,6 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
         };
     };
 
-
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-
-    //     sym_num_to_med {
-    //         if-layers = <SYM NUM>;
-    //         then-layer = <CAN>;
-    //     };
-    // };
-
     macros {
         dapos: delayed_apos {
             compatible = "zmk,behavior-macro";
@@ -128,21 +118,5 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
                                     &none         &none            &kp C_PP      &none         &none         &none 
             >;
         };
-        canary_layer {
-            bindings = <
-&kp C_PP  &kp W        &kp L        &kp Y           &kp P         &kp B          &kp Z      &kp F         &kp O          &kp U        &kp APOS     &kp C_VOL_UP
-&kp TAB   &hml LGUI C  &hml LALT R  &hml LSHFT S    &hml LCTRL T  &kp G          &kp M      &hmr LCTRL N  &hmr LSHFT E   &hmr LALT I  &hmr LGUI A  &kp C_VOL_DN
-&kp BSPC  &kp Q        &kp J        &kp V           &kp D         &kp K          &kp X      &kp H         &kp COMMA      &kp DOT      &kp MINUS    &kp DEL
-                                    &kp LC(BSPC)    &shiftlock    &kp SPACE      &kp RET    &kp ESC       &kp LC(DEL)
-            >;
-        };
-/*        oxey_layout {
-            bindings = <
-' l c p f  q , o é à
-r n s t d  h u e a i
-x j g v b  . m - * y
-            >;
-        };
-*/
     };  
 };
