@@ -118,7 +118,7 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
         gaming_layer {
             bindings = <
 &kp ESC   &kp Q        &kp W        &kp E           &kp R         &kp T          &kp Y      &kp U         &kp I          &kp O        &kp P         &kp C_VOL_UP
-&kp TAB   &kp A        &kp S        &kp S           &kp D         &kp F          &kp G      &kp H         &kp J          &kp K        &kp L         &kp C_VOL_DN
+&kp TAB   &kp A        &kp S        &kp D           &kp F         &kp G          &kp H      &kp J         &kp K          &kp L        &kp DLLR      &kp C_VOL_DN
 &kp LSHFT &kp Z        &kp X        &kp C           &kp V         &kp B          &kp N      &kp M         &kp COMMA      &kp DOT      &kp MINUS     &kp DEL
                                     &lt 3 LCTRL     &kp LALT      &lt 1 SPACE    &lt 2 RET  &kp ESC       &tog GAM
             >;
