@@ -24,7 +24,7 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 #define NUM 2
 #define NAV 3
 #define MED 4
-#define CAN 5
+#define GAM 5
 
 / {
     behaviors {
@@ -57,6 +57,15 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
             label = "SHIFT_LOCK";
             #binding-cells = <0>;
             bindings = <&kp LSHFT>, <&kp CAPS>;
+        };
+
+        combos {
+            compatible = "zmk,combos";
+            combo_esc {
+                timeout-ms = <50>;
+                key-positions = <LH2 LH1 LH0>;
+                bindings = <&tog GAM>;
+            };
         };
     };
 
@@ -104,6 +113,14 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 &none  &none         &kp C_PREV     &kp C_AC_BACK &kp C_AC_FORWARD &kp C_NEXT    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none 
 &none  &kp C_BRI_MIN &kp C_BRI_DN   &kp C_BRI_UP  &kp C_BRI_MAX    &none         &none         &none         &none         &none         &none         &none 
                                     &none         &none            &kp C_PP      &none         &none         &none 
+            >;
+        };
+        gaming_layer {
+            bindings = <
+&kp ESC   &kp Q        &kp W        &kp E           &kp R         &kp T          &kp Y      &kp U         &kp I          &kp O        &kp P         &kp C_VOL_UP
+&kp TAB   &kp A        &kp S        &kp S           &kp D         &kp F          &kp G      &kp H         &kp J          &kp K        &kp L         &kp C_VOL_DN
+&kp LSHFT &kp Z        &kp X        &kp C           &kp V         &kp B          &kp N      &kp M         &kp COMMA      &kp DOT      &kp MINUS     &kp DEL
+                                    &lt 3 LCTRL     &kp LALT      &lt 1 SPACE    &lt 2 RET  &kp ESC       &tog GAM
             >;
         };
     };  
