@@ -79,7 +79,7 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        }
+        };
     };
 
     keymap {
