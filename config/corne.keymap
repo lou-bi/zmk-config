@@ -74,6 +74,12 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
             bindings = <&kp AT>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        bspcdel: bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }
     };
 
     keymap {
@@ -81,10 +87,10 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 
         default {
             bindings = <
-&kp C_PP      &kp Q        &kp W        &kp F         &kp P         &kp B            &kp J        &kp L         &kp U          &kp Y        &kp SEMI     &kp MINUS
-&kp TAB       &hml LGUI A  &hml LALT R  &hml LSHFT S  &hml LCTRL T  &kp G            &kp M        &hmr LCTRL N  &hmr LSHFT E   &hmr LALT I  &hmr LGUI O  &kp APOS
-&kp LC(BSPC)  &kp Z        &kp X        &kp C         &kp D         &kp V            &kp K        &kp H         &kp COMMA      &kp DOT      &kp FSLH     &atexcl
-                                        &kp BSPC      &lt NAV ESC   &lt NUM SPACE    &lt SYM RET  &shiftlock    &lt MED DEL
+&kp LGUI   &kp Q  &kp W  &kp F     &kp P          &kp B       &kp J        &kp L        &kp U      &kp Y    &kp SEMI  &kp MINUS
+&kp TAB    &kp A  &kp R  &kp S     &kp T          &kp G       &kp M        &kp N        &kp E      &kp I    &kp O     &kp APOS
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp D          &kp V       &lt MED K    &kp H        &kp COMMA  &kp DOT  &kp FSLH  &atexcl
+                         &kp LALT  &lt NUM SPACE  &bspcdel    &lt SYM ESC  &lt NAV RET  &caps_word
             >;
         };
 
