@@ -26,6 +26,12 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
 #define MED 4
 #define GAM 5
 
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
 / {
     behaviors {
         hml: home_row_left {
@@ -83,14 +89,14 @@ ZMK_UNICODE_SINGLE(euro, N2, N0, A, C)  // €
     };
 
     keymap {
-        compatible = "zmk,keymap";
+        compatible = "zmk,keymap";        
 
         default {
             bindings = <
-&kp LGUI   &kp Q        &kp W        &kp F     &kp P          &kp B       &kp J        &kp L        &kp U      &kp Y    &kp SEMI  &kp MINUS
-&kp TAB    &hml LGUI A  &hml LALT R  &hml LSHFT S     &hml LCTRL T          &kp G       &kp M        &hmr RCTRL N        &hmr LSHFT E      &hmr LALT I        &hmr LGUI O     &kp APOS
-&kp LCTRL  &kp Z        &kp X  &kp C     &kp D          &kp V       &lt MED K    &kp H        &kp COMMA  &kp DOT  &kp FSLH  &atexcl
-                         &kp LALT &bspcdel  &lt NUM SPACE      &lt NAV RET &lt SYM ESC &caps_word
+&kp LGUI   &kp Q        &kp W        &kp F         &kp P          &kp B            &kp J        &kp L         &kp U         &kp Y        &kp SEMI     &kp MINUS
+&kp TAB    &hml LGUI A  &hml LALT R  &hml LSHFT S  &hml LCTRL T   &kp G            &kp M        &hmr RCTRL N  &hmr LSHFT E  &hmr LALT I  &hmr LGUI O  &kp APOS
+&kp LCTRL  &kp Z        &kp X        &kp C         &kp D          &kp V            &lt MED K    &kp H         &kp COMMA     &kp DOT      &kp FSLH     &atexcl
+                                     &kp LALT      &bspcdel       &lt NUM SPACE    &lt NAV RET  &lt SYM ESC   &caps_word
             >;
         };
 
